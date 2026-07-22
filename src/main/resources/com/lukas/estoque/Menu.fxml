@@ -1,22 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukas.estoque.MenuController">
-   <children>
-      <Label layoutX="162.0" layoutY="125.0" prefHeight="153.0" prefWidth="205.0" text="HOME" textFill="#0eae33">
-         <font>
-            <Font name="Comic Sans MS" size="58.0" />
-         </font>
-      </Label>
-      <Button fx:id="btnSair" layoutX="440.0" layoutY="14.0" mnemonicParsing="false" onAction="#aoSair">
-         <graphic>
-            <FontIcon fx:id="icoSair" iconLiteral="mdi2e-exit-to-app" iconSize="30" text="󰈆" />
-         </graphic>
-      </Button>
-   </children>
-</AnchorPane>
+<BorderPane fx:id="telaMenu" prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukas.estoque.MenuController">
+   <left>
+      <VBox prefHeight="450.0" prefWidth="185.0" styleClass="menuPrincipal" stylesheets="@Style.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label styleClass="titulo" stylesheets="@Style.css" text="Estoque 📦 " textFill="#ffe500">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Arial Black" size="22.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" styleClass="botao1" text="Visualizar Estoque" textFill="#ffe500">
+               <graphic>
+                  <FontIcon iconColor="#ffe500" iconLiteral="mdi2a-archive-eye-outline" iconSize="20" />
+               </graphic>
+            </Button>
+            <Button layoutX="10.0" layoutY="102.0" mnemonicParsing="false" styleClass="botao1" text="Entrada de Produtos" textFill="#ffe500">
+               <graphic>
+                  <FontIcon iconColor="#ffe500" iconLiteral="mdi2a-archive-plus-outline" iconSize="20" />
+               </graphic>
+            </Button>
+            <Button layoutX="10.0" layoutY="127.0" mnemonicParsing="false" styleClass="botao1" text="Relátorio" textFill="#ffe500">
+               <graphic>
+                  <FontIcon iconColor="#ffe500" iconLiteral="mdi2b-beaker-check-outline" iconSize="20" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnSair" mnemonicParsing="false" onAction="#aoSair" styleClass="botao1" textFill="#f5f5f5">
+               <graphic>
+                  <FontIcon fx:id="icoSair" iconColor="#ffe500" iconLiteral="mdi2e-exit-to-app" iconSize="30" styleClass="botao1" text="󰈆 Sair" wrappingWidth="108.0" />
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+
+   <center>
+      <AnchorPane style="-fx-background-color: #ffe500; -fx-border-width: 10; -fx-border-color: #7CC21F;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label text="Bem - Vindo!" textAlignment="CENTER" textFill="#1100ff">
+                     <font>
+                        <Font name="Arial Black" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Selecione uma opção no menu ao lado." textFill="#1100ff">
+                     <font>
+                        <Font name="Arial Black" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+
+            <ImageView fx:id="minhaImagem" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+               <image>
+                  <Image url="@img/carrinhoEst.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

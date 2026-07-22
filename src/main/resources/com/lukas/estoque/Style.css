@@ -1,21 +1,49 @@
-.campos-login{
-    -fx-border-width:  5;
+.campos-login {
+    -fx-border-width: 5;
     -fx-border-color: #FFB830;
-    -fx-prompt-text-fill:  #7CC21F;
-    -fx-text-fill:  #7CC21F;
+    -fx-prompt-text-fill: #7CC21F;
+    -fx-text-fill: #7CC21F;
 }
-.botao{
+
+.botao {
     -fx-background-color: #7CC21F;
     -fx-border-width: 5;
     -fx-border-color: #7CC21F;
 }
-.telaPrincipal{
-    -fx-background-color:  #2A3CA8;
+
+.telaPrincipal {
+    -fx-background-color: #2A3CA8;
     -fx-border-radius: 2;
     -fx-border-width: 12;
-    -fx-border-color:  #FFB830;
-
+    -fx-border-color: #FFB830;
 }
-.menuPrincipal{
-    -fx-background-color:  #2A3CA8;
+
+.menuPrincipal {
+    -fx-background-color: #2A3CA8;
+}
+
+.titulo {
+    -fx-text-fill: #ffe500; /* Corrigido: -fx-text-fill */
+    -fx-font-family: "Arial Black"; /* Corrigido: -fx-font-family */
+    -fx-padding: 10 0 10 10;
+}
+
+/* Estado normal do botão */
+.botao1 {
+    -fx-background-color: transparent;
+    -fx-padding: 10 0 10 10;
+    -fx-font-family: "Arial Black"; /* Corrigido */
+    -fx-text-fill: #ffe500; /* Corrigido */
+    -fx-cursor: hand;
+}
+
+/* Quando o mouse passa por cima do botão */
+.botao1:hover {
+    -fx-background-color: #7CC21F; /* Fundo verde */
+    -fx-text-fill: #2A3CA8;        /* Muda o texto para azul para dar contraste com o verde */
+}
+
+/* Muda a cor do ícone Ikonli ao passar o mouse */
+.botao1:hover .ikonli-font-icon {
+    -fx-icon-color: #2A3CA8;       /* Deixa o ícone azul junto com o texto */
 }
