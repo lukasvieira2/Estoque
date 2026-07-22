@@ -1,0 +1,21 @@
+.campos-login{
+    -fx-border-width:  5;
+    -fx-border-color: #FFB830;
+    -fx-prompt-text-fill:  #7CC21F;
+    -fx-text-fill:  #7CC21F;
+}
+.botao{
+    -fx-background-color: #7CC21F;
+    -fx-border-width: 5;
+    -fx-border-color: #7CC21F;
+}
+.telaPrincipal{
+    -fx-background-color:  #2A3CA8;
+    -fx-border-radius: 2;
+    -fx-border-width: 12;
+    -fx-border-color:  #FFB830;
+
+}
+.menuPrincipal{
+    -fx-background-color:  #2A3CA8;
+}
