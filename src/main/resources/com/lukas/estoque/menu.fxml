@@ -38,9 +38,9 @@
                   <FontIcon iconColor="#ffe500" iconLiteral="mdi2b-beaker-check-outline" iconSize="20" />
                </graphic>
             </Button>
-            <Button  mnemonicParsing="false" onAction="#aoSair" styleClass="botao1" textFill="#f5f5f5">
+            <Button mnemonicParsing="false" onAction="#aoSair" styleClass="botao1" textFill="#f5f5f5">
                <graphic>
-                  <FontIcon  iconColor="#ffe500" iconLiteral="mdi2e-exit-to-app" iconSize="30" onDragDetected="#aoSair" styleClass="botao1" text="󰈆 Sair" wrappingWidth="108.0" />
+                  <FontIcon iconColor="#ffe500" iconLiteral="mdi2e-exit-to-app" iconSize="30" onDragDetected="#aoSair" styleClass="botao1" text="󰈆 Sair" wrappingWidth="108.0" />
                </graphic>
             </Button>
          </children>
