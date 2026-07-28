@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<BorderPane fx:id="telaMenu" prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukas.estoque.MenuController">
+<BorderPane fx:id="telaMenu" prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukas.estoque.controller.MenuController">
    <left>
       <VBox prefHeight="450.0" prefWidth="185.0" styleClass="menuPrincipal" stylesheets="@Style.css" BorderPane.alignment="CENTER">
          <children>
@@ -23,24 +23,24 @@
                   <Font name="Arial Black" size="22.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" styleClass="botao1" text="Visualizar Estoque" textFill="#ffe500">
+            <Button fx:id="btnVisualizarEstoque" mnemonicParsing="false" onAction="#aoVisualizarEstoque" styleClass="botao1" text="Visualizar Estoque" textFill="#ffe500">
                <graphic>
                   <FontIcon iconColor="#ffe500" iconLiteral="mdi2a-archive-eye-outline" iconSize="20" />
                </graphic>
             </Button>
-            <Button layoutX="10.0" layoutY="102.0" mnemonicParsing="false" styleClass="botao1" text="Entrada de Produtos" textFill="#ffe500">
+            <Button fx:id="btnEntradaProdutos" layoutX="10.0" layoutY="102.0" mnemonicParsing="false" onAction="#aoCadastrarProdutos" styleClass="botao1" text="Entrada de Produtos" textFill="#ffe500">
                <graphic>
                   <FontIcon iconColor="#ffe500" iconLiteral="mdi2a-archive-plus-outline" iconSize="20" />
                </graphic>
             </Button>
-            <Button layoutX="10.0" layoutY="127.0" mnemonicParsing="false" styleClass="botao1" text="Relátorio" textFill="#ffe500">
+            <Button fx:id="btnGerarRelatorio" layoutX="10.0" layoutY="127.0" mnemonicParsing="false" onAction="#aoGerarRelatorio" styleClass="botao1" text="Relátorio" textFill="#ffe500">
                <graphic>
                   <FontIcon iconColor="#ffe500" iconLiteral="mdi2b-beaker-check-outline" iconSize="20" />
                </graphic>
             </Button>
-            <Button fx:id="btnSair" mnemonicParsing="false" onAction="#aoSair" styleClass="botao1" textFill="#f5f5f5">
+            <Button  mnemonicParsing="false" onAction="#aoSair" styleClass="botao1" textFill="#f5f5f5">
                <graphic>
-                  <FontIcon fx:id="icoSair" iconColor="#ffe500" iconLiteral="mdi2e-exit-to-app" iconSize="30" styleClass="botao1" text="󰈆 Sair" wrappingWidth="108.0" />
+                  <FontIcon  iconColor="#ffe500" iconLiteral="mdi2e-exit-to-app" iconSize="30" onDragDetected="#aoSair" styleClass="botao1" text="󰈆 Sair" wrappingWidth="108.0" />
                </graphic>
             </Button>
          </children>

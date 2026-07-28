@@ -1,5 +1,6 @@
-package com.lukas.estoque;
+package com.lukas.estoque.controller;
 
+import com.lukas.estoque.util.GerenciadorTela;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,12 +30,7 @@ public class LoginController {
     protected void aoApertarBotao(ActionEvent event) throws IOException {
 
         if ( usuarioCadastrado.equalsIgnoreCase(usuario.getText()) && senhaCadastrada.equals(senha.getText())){
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
-            Scene scene = new Scene(loader.load());
-            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.setTitle("home");
-            stage.show();
+            GerenciadorTela.getIntancia().trocarTela(event, "menu.fxml", "Sistema de Estoque - login");
         } else {
             erroDados.setVisible(true);
         }
