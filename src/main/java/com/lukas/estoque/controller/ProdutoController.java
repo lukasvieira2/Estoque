@@ -72,8 +72,7 @@ public class ProdutoController {
             produtoEmEdicao.setQuantidade(quandidade);
             produtoEmEdicao.setPreco(preco);
             mostrarSucesso(event, "Prduto editado co sucesso!");
-        }
-        System.out.println(dadosEstoque.listarProdutos());
+            }
     }
 
     private void mostrarErro(String mensagem) {

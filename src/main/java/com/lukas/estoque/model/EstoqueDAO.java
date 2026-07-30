@@ -1,18 +1,15 @@
 package com.lukas.estoque.model;
 
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.security.PublicKey;
-
 public class EstoqueDAO {
     private static EstoqueDAO instancia;
-    private final ObservableList<Produto> listaProduto;
+    private final ObservableList<Produto> listaProdutos;
     private int idproduto = 1;
 
     private EstoqueDAO(){
-        this.listaProduto = FXCollections.observableArrayList();
+        this.listaProdutos = FXCollections.observableArrayList();
     }
     public static EstoqueDAO getInstancia() {
         if (instancia == null) {
@@ -22,12 +19,12 @@ public class EstoqueDAO {
 
     public void adcionar(Produto produto){
         produto.setId(idproduto++);
-        listaProduto.add(produto);
+        listaProdutos.add(produto);
     }
     public ObservableList<Produto> listarProdutos(){
-        return listarProdutos();
+        return listaProdutos;
     }
     public void remover(Produto produto){
-        listaProduto.remove(produto);
+        listaProdutos.remove(produto);
     }
 }
