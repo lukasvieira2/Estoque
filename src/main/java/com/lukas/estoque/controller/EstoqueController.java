@@ -5,13 +5,13 @@ import com.lukas.estoque.model.Produto;
 import com.lukas.estoque.util.GerenciadorTela;
 import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 
+import javax.imageio.IIOException;
 import java.io.IOException;
 
 public class EstoqueController {
@@ -60,27 +60,45 @@ public class EstoqueController {
 
 
 
-
-
-
-
-
-
-
-
     @FXML
-    protected void adcionarProduto(){
-
+    protected void adcionarProduto(ActionEvent event) throws IOException {
+        GerenciadorTela.getIntancia().trocarTela(event, "produto.fxml", "Sistema de Estoque - Adcionar Produto");
     }
 
     @FXML
-    protected void editarProduto(){
-
+    protected void editarProduto(ActionEvent event) throws IOException {
+        Produto produtoSelecionado = ( Produto ) tabelaProdutos.getSelectionModel().getSelectedItem();
+        if( produtoSelecionado == null){
+            mostrarAlerta("Selecione um produto para editar!");
+            return;
+        }
+        GerenciadorTela.getIntancia().telaEdicao(event, "produto.fxml","Sistema de Estoque - Editar Produto", (ProdutoController controller) -> controller.preencherParaEdicao(produtoSelecionado));
     }
+
+    public void mostrarAlerta(String mensagem){
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION, mensagem);
+        alerta.setHeaderText(null);
+        alerta.showAndWait();
+    }
+
 
     @FXML
     protected void removerProduto(){
-
+       Produto produtoSelecionado = (Produto) tabelaProdutos.getSelectionModel().getSelectedItem();
+        if( produtoSelecionado == null){
+            mostrarAlerta("Selecione um produto para remover!");
+            return;
+        }
+        Alert confirmacao = new Alert(Alert.AlertType.CONFIRMATION,"Remover o produto"+produtoSelecionado.getNome()+ "do estoque?");
+        confirmacao.setHeaderText(null);
+        ButtonType btnSim = new ButtonType("Sim");
+        ButtonType btnNao = new ButtonType("Não");
+        confirmacao.getButtonTypes().setAll(btnSim, btnNao);
+        confirmacao.showAndWait().ifPresent(botao -> {
+            if(botao == btnSim){
+                dadosEstoque.remover(produtoSelecionado);
+            }
+        });
     }
 
     @FXML

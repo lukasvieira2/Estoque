@@ -30,6 +30,9 @@ public class ProdutoController {
     @FXML
     private Button botaoSalvar;
 
+    @FXML
+    private Button botaoCancelar;
+
     private final EstoqueDAO dadosEstoque = EstoqueDAO.getInstancia();
 
     private Produto produtoEmEdicao;
@@ -40,7 +43,8 @@ public class ProdutoController {
         campoCategoria.setText(produto.getCategoria());
         campoQuantidade.setText(String.valueOf(produto.getQuantidade()));
         campoPreco.setText(String.valueOf(produto.getPreco()));
-        botaoSalvar.setText("Salvar Alteração");
+        botaoSalvar.setText("Editar");
+        botaoCancelar.setText("Cancelar a Edição");
     }
 
 
