@@ -4,6 +4,7 @@ import com.lukas.estoque.model.Usuario;
 import com.lukas.estoque.model.UsuarioDAO;
 import com.lukas.estoque.util.GerenciadorTela;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -13,6 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Optional;
@@ -30,7 +32,7 @@ public class LoginController {
     private final UsuarioDAO bdUsuario = UsuarioDAO.getInstancia();
 
     @FXML
-    protected  void aoApertarBotao(ActionEvent event) throws IOException{
+    protected  void aoApertarBotao(Event event) throws IOException{
 
         String usuarioDigitado = usuario.getText().toLowerCase();
         String senhaDigitada = senha.getText();
@@ -46,12 +48,16 @@ public class LoginController {
     }
 
 
-
+    @FXML
+    protected void aoCadastrar(Event event) throws IOException {
+        GerenciadorTela.getIntancia().trocarTela(event,"cadastro.fxml", "Sistemade Estoque - cadastrar estoque");
+    }
 
 
     @FXML
     protected  void aoEsquecerSenha(){
         System.out.println(" Você esqueceu! Já não é problema meu.");
     }
+
 
 }

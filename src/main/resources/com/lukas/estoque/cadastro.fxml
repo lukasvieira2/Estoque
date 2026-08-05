@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -15,33 +16,62 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-
-    <Label fx:id="textoNaTela" prefHeight="50.0" prefWidth="513.0" text="          cadastrar funcionário" textFill="#f8e802">
-      <font>
-         <Font name="Comic Sans MS Bold Italic" size="24.0" />
-      </font>
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+      
+                <Label fx:id="textoNaTela" prefHeight="50.0" prefWidth="513.0" text="          cadastrar funcionário" textFill="#f8e802">
+            <font>
+               <Font name="Comic Sans MS Bold Italic" size="24.0" />
+            </font>
+            <graphic>
+               <FontIcon iconColor="#ffd400" iconLiteral="mdi2a-account-multiple-plus-outline" iconSize="50" />
+            </graphic>
+         </Label>
+      </children>
+   </HBox>
+   <VBox prefHeight="80.0" prefWidth="879.0">
+      <children>
+         <TextField fx:id="usuarioCadastrar" prefHeight="44.0" prefWidth="343.0" promptText="Usuário cadastrar!" styleClass="campos-login" stylesheets="@Style.css">
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+            <font>
+               <Font size="14.0" />
+            </font>
+         </TextField>
+         <Label fx:id="usuarioInvalido" text="É necessário informar um E- mail válido!" textFill="#10f818" visible="false">
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin>
+            <font>
+               <Font name="Comic Sans MS Italic" size="18.0" />
+            </font>
+         </Label>
+      </children>
       <VBox.margin>
-         <Insets bottom="30.0" />
+         <Insets bottom="5.0" left="50.0" right="50.0" />
       </VBox.margin>
-      <graphic>
-         <FontIcon iconColor="#ffd400" iconLiteral="mdi2a-account-multiple-plus-outline" iconSize="50" />
-      </graphic></Label>
-   <TextField fx:id="usuarioCadastrar" prefHeight="44.0" prefWidth="343.0" promptText="Usuário cadastrar!" styleClass="campos-login" stylesheets="@Style.css">
+   </VBox>
+   <VBox prefHeight="62.0" prefWidth="879.0">
+      <children>
+         <PasswordField fx:id="senhaCadastrar" prefHeight="44.0" prefWidth="460.0" promptText="Informe sua senha!" styleClass="campos-login" stylesheets="@Style.css">
+            <font>
+               <Font size="14.0" />
+            </font>
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+         </PasswordField>
+         <Label fx:id="senhaInvalida" text="Senha válida!" textFill="#10f818" visible="false">
+            <font>
+               <Font name="Comic Sans MS Italic" size="18.0" />
+            </font>
+         </Label>
+      </children>
       <VBox.margin>
-         <Insets bottom="20.0" left="50.0" right="50.0" />
+         <Insets left="50.0" right="50.0" />
       </VBox.margin>
-      <font>
-         <Font size="14.0" />
-      </font>
-   </TextField>
-   <PasswordField fx:id="senhaCadastrar" layoutX="92.0" layoutY="312.0" prefHeight="44.0" prefWidth="460.0" promptText="Informe sua senha!" styleClass="campos-login" stylesheets="@Style.css">
-      <font>
-         <Font size="14.0" />
-      </font>
-      <VBox.margin>
-         <Insets bottom="20.0" left="50.0" right="50.0" />
-      </VBox.margin>
-   </PasswordField>
+   </VBox>
    <PasswordField fx:id="confirmarSenha" prefHeight="44.0" prefWidth="460.0" promptText="Confirma a sua senha!" styleClass="campos-login" stylesheets="@Style.css">
       <VBox.margin>
          <Insets bottom="-20.0" left="50.0" right="50.0" />

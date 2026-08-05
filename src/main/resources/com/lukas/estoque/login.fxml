@@ -70,4 +70,9 @@
          <Insets />
       </VBox.margin>
    </Label>
+   <Label fx:id="casdastrarNovo" layoutX="418.0" layoutY="499.0" onMouseClicked="#aoCadastrar" text="Ainda não possui Cadastro? Cadastre-se agora" textFill="#10f818" underline="true">
+      <font>
+         <Font name="Comic Sans MS Italic" size="14.0" />
+      </font>
+   </Label>
 </VBox>

@@ -1,6 +1,7 @@
 package com.lukas.estoque.util;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -26,7 +27,7 @@ public class GerenciadorTela {
     }
 
 
-    public void trocarTela(ActionEvent event, String telaFXML, String titulo) throws IOException {
+    public void trocarTela(Event event, String telaFXML, String titulo) throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/lukas/estoque/" + telaFXML));
         Scene scene = new Scene(fxmlLoader.load());
