@@ -1,5 +1,7 @@
 package com.lukas.estoque.controller;
 
+import com.lukas.estoque.model.Usuario;
+import com.lukas.estoque.model.UsuarioDAO;
 import com.lukas.estoque.util.GerenciadorTela;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Map;
+import java.util.Optional;
 
 public class LoginController {
     @FXML
@@ -24,17 +27,16 @@ public class LoginController {
     @FXML
     private TextFlow erroDados;
 
-    private Map<String, String> usuariosCadastrados = Map.of(
-            "admin@gmail.com", "admiin",
-            "lukas@gmail.com", "123",
-            "funcionario@gmail.com", "321"
-    );
+    private final UsuarioDAO bdUsuario = UsuarioDAO.getInstancia();
+
     @FXML
     protected  void aoApertarBotao(ActionEvent event) throws IOException{
 
         String usuarioDigitado = usuario.getText().toLowerCase();
         String senhaDigitada = senha.getText();
-        if ( usuariosCadastrados.containsKey(usuarioDigitado) && usuariosCadastrados.get(usuarioDigitado).equals(senhaDigitada)){
+        Optional<Usuario> usuarioEncontrado = bdUsuario.buscarProEmail(usuarioDigitado);
+
+        if (usuarioEncontrado.isPresent() && usuarioEncontrado.get().getSenha().equals(senhaDigitada) ){
 
             GerenciadorTela.getIntancia().trocarTela(event, "menu.fxml", "Sistema Estoque - Menu");
 

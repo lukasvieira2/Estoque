@@ -68,7 +68,7 @@ public class ProdutoController {
         }
         if(produtoEmEdicao == null){
             Produto produto = new Produto(0, nome, categoria, quandidade, preco);
-            dadosEstoque.adcionar(produto);
+            dadosEstoque.adicionar(produto);
             mostrarSucesso(event, "Produto inserido com sucesso!");
         }else{
             produtoEmEdicao.setNome(nome);
@@ -76,7 +76,7 @@ public class ProdutoController {
             produtoEmEdicao.setQuantidade(quandidade);
             produtoEmEdicao.setPreco(preco);
             mostrarSucesso(event, "Prduto editado co sucesso!");
-            }
+        }
     }
 
     private void mostrarErro(String mensagem) {
@@ -99,5 +99,4 @@ public class ProdutoController {
 
 
 }
-
 

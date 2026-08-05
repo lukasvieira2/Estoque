@@ -4,27 +4,49 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class EstoqueDAO {
+
     private static EstoqueDAO instancia;
-    private final ObservableList<Produto> listaProdutos;
-    private int idproduto = 1;
+    private final ObservableList<Produto> produtosList;
+    private int idProduto = 1;
+
 
     private EstoqueDAO(){
-        this.listaProdutos = FXCollections.observableArrayList();
+        this.produtosList = FXCollections.observableArrayList();
     }
-    public static EstoqueDAO getInstancia() {
-        if (instancia == null) {
-            instancia = new EstoqueDAO();}
+
+
+    public static EstoqueDAO getInstancia(){
+        if ( instancia == null){
+            instancia = new EstoqueDAO();
+        }
         return instancia;
     }
 
-    public void adcionar(Produto produto){
-        produto.setId(idproduto++);
-        listaProdutos.add(produto);
+    public void adicionar(Produto produto){
+        produto.setId(idProduto++);
+        produtosList.add(produto);
     }
+
     public ObservableList<Produto> listarProdutos(){
-        return listaProdutos;
+        return produtosList;
     }
+
     public void remover(Produto produto){
-        listaProdutos.remove(produto);
+        produtosList.remove(produto);
     }
+
+
+    public double calcularValorTotalEstoque(){
+        return produtosList.stream().mapToDouble(Produto::getValorTotal).sum();
+    }
+
+    public long calcularEstoqueBaixo(int limite){
+        return  produtosList.stream().filter( p -> p.getQuantidade() < limite).count();
+
+    }
+
+
+
+
+
 }
