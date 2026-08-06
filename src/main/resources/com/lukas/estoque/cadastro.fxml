@@ -39,7 +39,7 @@
                <Font size="14.0" />
             </font>
          </TextField>
-         <Label fx:id="usuarioInvalido" text="É necessário informar um E- mail válido!" textFill="#10f818" visible="false">
+         <Label fx:id="usuarioInvalido" text="É necessário informar um E- mail válido!" textFill="#eb0000" visible="false">
             <VBox.margin>
                <Insets top="10.0" />
             </VBox.margin>
@@ -62,7 +62,7 @@
                <Insets />
             </VBox.margin>
          </PasswordField>
-         <Label fx:id="senhaInvalida" text="Senha válida!" textFill="#10f818" visible="false">
+         <Label fx:id="senhaInvalida" text="Senha válida!" textFill="RED" visible="false">
             <font>
                <Font name="Comic Sans MS Italic" size="18.0" />
             </font>

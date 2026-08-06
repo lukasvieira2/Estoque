@@ -45,6 +45,7 @@ public class CadastroController {
         String senha = senhaCadastrar.getText();
         if(senha.isBlank()){
             senhaInvalida.setVisible(true);
+            return;
         }
 
         String senhaConfirmacao = confirmarSenha.getText();
