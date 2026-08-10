@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="300.0" style="-fx-border-insets: 10; -fx-border-color: #ffe500; -fx-border-width: 10;" styleClass="telaPrincipal" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="300.0" style="-fx-border-insets: 10; -fx-border-color: #ffe500; -fx-border-width: 10;" styleClass="telaPrincipal" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukas.estoque.controller.CodigoConfirmacaoController">
     <children>
         <Text fill="#fdff00" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="cadastrar" text="Escreva o codigo que chegou seu gmail" wrappingWidth="217.53125">
             <VBox.margin>
@@ -18,22 +18,27 @@
                 <Font name="Arial Black" size="10.0" />
             </font>
         </Text>
-      <Label text="Informe o codigo recebido" textFill="#faff00">
+      <Label fx:id="codigoInformado" prefHeight="19.0" prefWidth="78.0" text="000000" textFill="#2200ff" visible="false">
          <VBox.margin>
-            <Insets left="40.0" top="10.0" />
+            <Insets left="90.0" top="9.0" />
          </VBox.margin>
       </Label>
-        <TextField prefHeight="25.0" prefWidth="209.0" promptText="Codigo(EX: 136963)">
+      <Label text="Informe o codigo recebido" textFill="#faff00">
+         <VBox.margin>
+            <Insets left="40.0" top="5.0" />
+         </VBox.margin>
+      </Label>
+        <TextField fx:id="codigoRecuperacao" prefHeight="25.0" prefWidth="209.0" promptText="Codigo(EX: 136963)">
             <VBox.margin>
-                <Insets bottom="5.0" left="30.0" right="30.0" top="15.0" />
+                <Insets left="30.0" right="30.0" top="10.0" />
             </VBox.margin>
         </TextField>
-      <Label text="Codigo errado! Tente novamente" textFill="RED" visible="false">
+      <Label fx:id="codigoInvalido" text="Codigo errado! Tente novamente" textFill="RED" visible="false">
          <VBox.margin>
             <Insets bottom="10.0" left="45.0" />
          </VBox.margin>
       </Label>
-        <Button mnemonicParsing="false" text="Validar">
+        <Button mnemonicParsing="false" onAction="#aoValidarCodigo" text="Validar">
             <VBox.margin>
                 <Insets left="100.0" />
             </VBox.margin>

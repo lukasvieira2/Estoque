@@ -9,8 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="300.0" style="-fx-border-insets: 10; -fx-border-color: #ffe500; -fx-border-width: 10;" styleClass="telaPrincipal" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="300.0" style="-fx-border-insets: 10; -fx-border-color: #ffe500; -fx-border-width: 10;" styleClass="telaPrincipal" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lukas.estoque.controller.EnviarEmailController">
    <children>
       <Text fill="#fdff00" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="cadastrar" text="Escreva seu gmail para a recuperação" wrappingWidth="217.53125">
          <VBox.margin>
@@ -24,17 +23,17 @@
          <children>
             <VBox prefHeight="0.0" prefWidth="200.0">
                <children>
-                  <TextField prefHeight="25.0" prefWidth="143.0" promptText="Seu email(ex: ny2026@gmail.com )" VBox.vgrow="ALWAYS">
+                  <TextField fx:id="emailRecuperacao" prefHeight="25.0" prefWidth="143.0" promptText="Seu email(ex: ny2026@gmail.com )" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </TextField>
-                  <Label text="Gmail não Cadastrado" textFill="#ee0202" visible="false">
+                  <Label fx:id="emailNaoCadastrado" text="Gmail não Cadastrado" textFill="#ee0202" visible="false">
                      <VBox.margin>
                         <Insets top="7.0" />
                      </VBox.margin>
                   </Label>
-                  <Button mnemonicParsing="false" text="Enviar">
+                  <Button mnemonicParsing="false" onAction="#aoValidarEmail" text="Enviar">
                      <VBox.margin>
                         <Insets left="70.0" top="8.0" />
                      </VBox.margin>

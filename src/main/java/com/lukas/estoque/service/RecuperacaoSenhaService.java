@@ -6,7 +6,7 @@ import com.lukas.estoque.model.UsuarioDAO;
 import java.util.Optional;
 import java.util.Random;
 
-public class recuperacaoSenhaService {
+public class RecuperacaoSenhaService {
 
     private Usuario usuarioAlvo;
 
@@ -22,6 +22,8 @@ public class recuperacaoSenhaService {
         this.usuarioAlvo = usuarioEncontrado.get();
          return this.codigoGerado;
     }
+
+
 
     private String gerarCodigo(){
         int codigo = new Random().nextInt(900_000) + 100_00;
