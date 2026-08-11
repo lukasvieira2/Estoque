@@ -61,3 +61,10 @@
     -fx-background-color: #7CC21F;
     -fx-text-fill:#F2F2F2;
 }
+
+.codigo-gerado {
+    -fx-text-fill:#2A3CA8;
+}
+.codigo-gerado:hover{
+    -fx-text-fill: #ffe500;
+}

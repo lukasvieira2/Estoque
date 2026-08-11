@@ -26,7 +26,7 @@ public class RecuperacaoSenhaService {
 
 
     private String gerarCodigo(){
-        int codigo = new Random().nextInt(900_000) + 100_00;
+        int codigo = new Random().nextInt(900_000) + 100_000;
         return String.valueOf(codigo);
     }
 

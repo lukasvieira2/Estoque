@@ -18,7 +18,7 @@
                 <Font name="Arial Black" size="10.0" />
             </font>
         </Text>
-      <Label fx:id="codigoInformado" prefHeight="19.0" prefWidth="78.0" text="000000" textFill="#2200ff" visible="false">
+      <Label fx:id="codigoRecuperacao" prefHeight="19.0" prefWidth="78.0" styleClass="codigo-gerado" stylesheets="@Style.css" text="000000" textFill="#2a3ca8">
          <VBox.margin>
             <Insets left="90.0" top="9.0" />
          </VBox.margin>
@@ -28,7 +28,7 @@
             <Insets left="40.0" top="5.0" />
          </VBox.margin>
       </Label>
-        <TextField fx:id="codigoRecuperacao" prefHeight="25.0" prefWidth="209.0" promptText="Codigo(EX: 136963)">
+        <TextField fx:id="codigoInformado" prefHeight="25.0" prefWidth="209.0" promptText="Codigo(EX: 136963)">
             <VBox.margin>
                 <Insets left="30.0" right="30.0" top="10.0" />
             </VBox.margin>

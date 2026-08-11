@@ -2,9 +2,12 @@ package com.lukas.estoque.controller;
 
 import com.lukas.estoque.service.RecuperacaoSenhaService;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
+
+import java.awt.*;
 
 public class NovaSenhaController {
 
@@ -17,8 +20,11 @@ public class NovaSenhaController {
     @FXML
     private Label senhaDiferente;
 
-    private  RecuperacaoSenhaService service = new RecuperacaoSenhaService();
+    private RecuperacaoSenhaService service ;
 
+    public void novaSenha( RecuperacaoSenhaService service){
+        this.service = service;
+    }
     @FXML
     protected void aoConfirmarSenha(){
 
@@ -39,7 +45,17 @@ public class NovaSenhaController {
         service.redeFinirSenha(novaSenhaText);
         ((Stage) novaSenha.getScene().getWindow()).close();
 
+        service.redeFinirSenha(novaSenhaText);
+        mostrarAlerta("Senha Alterada com sucesso!");
+        ((Stage) novaSenha.getScene().getWindow()).close();
 
     }
 
+    public void mostrarAlerta(String mensagem){
+
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, mensagem);
+        alert.setHeaderText(null);
+        alert.showAndWait();
+    }
 }
