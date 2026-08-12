@@ -1,5 +1,6 @@
 package com.lukas.estoque.controller;
 
+import com.lukas.estoque.service.Constantes;
 import com.lukas.estoque.service.RecuperacaoSenhaService;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -32,7 +33,10 @@ public class NovaSenhaController {
 
         String confirmaSenhaText = confirmarSenha.getText();
 
-        if(novaSenhaText.isBlank()){
+
+
+
+        if(novaSenhaText.isBlank() || !novaSenhaText.matches(Constantes.REGEX_SENHA.getValor())){
             senhaDiferente.setText("A nova senha não pode ficar em branco");
             senhaDiferente.setVisible(true);
             return;

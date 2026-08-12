@@ -2,6 +2,7 @@ package com.lukas.estoque.controller;
 
 import com.lukas.estoque.model.Usuario;
 import com.lukas.estoque.model.UsuarioDAO;
+import com.lukas.estoque.service.Constantes;
 import com.lukas.estoque.util.GerenciadorTela;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,6 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.TextFlow;
 
 import java.io.IOException;
+
+
 
 
 public class CadastroController {
@@ -37,13 +40,17 @@ public class CadastroController {
 
     @FXML
     protected  void aoConfirmarCadastro(ActionEvent event) throws IOException {
+
         String usuario = usuarioCadastrar.getText();
-        if(usuario.isBlank()){
+
+        if(usuario.isBlank() || !usuario.matches(Constantes.REGEX_EMAIL.getValor()) ){
             usuarioInvalido.setVisible(true);
             return;
         }
+
         String senha = senhaCadastrar.getText();
-        if(senha.isBlank()){
+
+        if(senha.isBlank()|| !senha.matches(Constantes.REGEX_SENHA.getValor())){
             senhaInvalida.setVisible(true);
             return;
         }
