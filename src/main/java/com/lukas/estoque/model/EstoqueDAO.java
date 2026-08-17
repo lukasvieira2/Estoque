@@ -3,6 +3,8 @@ package com.lukas.estoque.model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.List;
+
 public class EstoqueDAO {
 
     private static EstoqueDAO instancia;
@@ -27,6 +29,8 @@ public class EstoqueDAO {
         produtosList.add(produto);
     }
 
+
+
     public ObservableList<Produto> listarProdutos(){
         return produtosList;
     }
@@ -35,6 +39,9 @@ public class EstoqueDAO {
         produtosList.remove(produto);
     }
 
+    public void remover(List<Produto> listProdutos){
+        produtosList.removeAll(listProdutos);
+    }
 
     public double calcularValorTotalEstoque(){
         return produtosList.stream().mapToDouble(Produto::getValorTotal).sum();
